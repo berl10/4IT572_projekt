@@ -15,16 +15,16 @@ jobs:
           toke: ${{ secrets.WORKFLOW_TOCKEN }}
 
       - name: Setup NodeJS
-         uses: actions/setup-node@v4.0.0
-         with: 
+        uses: actions/setup-node@v4.0.0
+        with: 
           node-version: 14
 
-      -name: Cache node modules
-      uses: actions/cache@v3.3.2
-      with: 
-        path: node_modules
-        key: node_modules-$ {{ hashFiles("**/package-lock.json")}}
-        restore-keys: node_modules-
+      - name: Cache node modules
+        uses: actions/cache@v3.3.2
+        with: 
+          path: node_modules
+          key: node_modules-$ {{ hashFiles("**/package-lock.json")}}
+          restore-keys: node_modules-
 
       - name: Install packages with npm
         run: |
@@ -38,20 +38,20 @@ jobs:
       - name: Code checkout
         uses: actions/checkout@v4.1.1
         with:
-          toke: token: ${{ secrets.WORKFLOW_TOCKEN }}
+          toke: ${{ secrets.WORKFLOW_TOCKEN }}
 
       - name: Setup NodeJS
-         uses: actions/setup-node@v4.0.0
-         with: 
+        uses: actions/setup-node@v4.0.0
+        with: 
           node-version: 14
 
-      -name: Cache node modules
-      uses: actions/cache@v3.3.2
-      with: 
-        path: node_modules
-        key: node_modules-$ {{ hashFiles("**/package-lock.json")}}
+      - name: Cache node modules
+        uses: actions/cache@v3.3.2
+        with: 
+          path: node_modules
+          key: node_modules-$ {{ hashFiles("**/package-lock.json")}}
        
-      -name: Build 
+      - name: Build 
         run: |
           npm rebuild node-sass --force
           npm run build -- --colors
@@ -64,19 +64,19 @@ jobs:
       - name: Code checkout
         uses: actions/checkout@v4.1.1
         with:
-          toke: token: ${{ secrets.WORKFLOW_TOCKEN }}
+          toke: ${{ secrets.WORKFLOW_TOCKEN }}
 
       - name: Setup NodeJS
-         uses: actions/setup-node@v4.0.0
-         with: 
+        uses: actions/setup-node@v4.0.0
+        with: 
           node-version: 14
 
-      -name: Cache node modules
-      uses: actions/cache@v3.3.2
-      with: 
-        path: node_modules
-        key: node_modules-$ {{ hashFiles("**/package-lock.json")}}
+      - name: Cache node modules
+        uses: actions/cache@v3.3.2
+        with: 
+          path: node_modules
+          key: node_modules-$ {{ hashFiles("**/package-lock.json")}}
        
-      -name: Run tests
+      - name: Run tests
         run: |
           npm run test -- --colors
