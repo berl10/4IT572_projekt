@@ -23,7 +23,7 @@ jobs:
         uses: actions/cache@v3.3.2
         with: 
           path: node_modules
-          key: node_modules-$ {{ hashFiles("**/package-lock.json")}}
+          key: node_modules-$ {{ hashFiles('**/package-lock.json')}}
           restore-keys: node_modules-
 
       - name: Install packages with npm
@@ -87,7 +87,7 @@ jobs:
         uses: actions/cache@v3.3.2
         with: 
           path: node_modules
-          key: node_modules-${{ hashFiles("**/package-lock.json")}}
+          key: node_modules-${{ hashFiles('**/package-lock.json')}}
        
       - name: Run tests
         run: |
