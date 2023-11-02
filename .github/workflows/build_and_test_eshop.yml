@@ -91,7 +91,7 @@ jobs:
        
       - name: Run tests
         run: |
-          npm run test -- --colors
+          npm run test -- --silent
 
   Deploy:
     needs: [Build,Test]
