@@ -49,7 +49,7 @@ jobs:
         uses: actions/cache@v3.3.2
         with: 
           path: node_modules
-          key: node_modules-$ {{ hashFiles("**/package-lock.json")}}
+          key: node_modules-$ {{ hashFiles('**/package-lock.json')}}
        
       - name: Build 
         run: |
@@ -57,7 +57,7 @@ jobs:
           npm run build -- --colors
 
       - name: Cache node modules and build folder
-        if: ${{ github.ref == "refs/heads/master"}}
+        if: ${{ github.ref == 'refs/heads/master'}}
         uses: actions/setup-node@v4.0.0
         with:
           path: |
@@ -95,7 +95,7 @@ jobs:
 
   Deploy:
     needs: [Build,Test]
-    if: ${{ github.ref == "refs/heads/master"}}
+    if: ${{ github.ref == 'refs/heads/master'}}
     runs-on: ubuntu-latest
 
     steps:
