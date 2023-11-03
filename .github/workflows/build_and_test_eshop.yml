@@ -103,8 +103,8 @@ jobs:
         with:
           token: ${{ secrets.WORKFLOW_TOCKEN }}
 
-      - name: Load Node modules and build folder
-        uses: actions/setup-node@v4.0.0
+      - name: Load node modules and build folder
+        uses: actions/cache@v3.3.2
         with:
           path: |
             ~/.npm
