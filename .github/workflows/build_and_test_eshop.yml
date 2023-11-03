@@ -93,10 +93,10 @@ jobs:
           npm run test -- --colors
 
   Deploy:
-    needs: Build
-    if: ${{ github.ref == 'refs/heads/master'}}
+    needs: [Build, Test]
     runs-on: ubuntu-latest
-
+    if: ${{ github.ref == 'refs/heads/master' }}
+    
     steps:
       - name: Git checkout
         uses: actions/checkout@v4.1.1
