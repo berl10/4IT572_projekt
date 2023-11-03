@@ -19,4 +19,6 @@ describe('[components] - App', () => {
     const view = setup();
     expect(view).toMatchSnapshot();
   });
-});
+}); 
+
+
