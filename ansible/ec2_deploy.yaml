@@ -59,7 +59,7 @@
       become: yes
     - name: Get project files from git
       git:
-        repo: 'https://github.com/berl10/4IT572_ansible.git'
+        repo: 'https://github.com/berl10/4IT572_projekt.git'
         dest: ./app
     - name: Build docker with eshop
       shell: cd app && docker build -t myeshop:latest .
